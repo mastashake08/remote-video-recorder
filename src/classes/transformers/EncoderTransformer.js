@@ -21,13 +21,12 @@ class EncoderTransformer extends VideoEncoder {
         start(controller) {
           // Skipped: a few per-frame parameters
           this.encodedCallback = null;
-          this.encoder  = new VideoEncoder({
+          this.#encoder  = new VideoEncoder({
             output: (chunk, metadata) => {
               if (metadata.decoderConfig) {
                 // Serialize decoder config as chunk
                 const decoderConfig = JSON.stringify(metadata.decoderConfig);
                 const configChunk = {
-                  chunk: chunk,
                   decode: decoderConfig
                  };
                 controller.enqueue(configChunk);
@@ -53,7 +52,7 @@ class EncoderTransformer extends VideoEncoder {
           return new Promise(resolve => {
             this.encodedCallback = resolve;
             // Skipped: check need to encode frame as key frame
-            this.encoder.encode(frame, { … });
+            this.#encoder.encode(frame, { … });
             frame.close();
           });
         }
