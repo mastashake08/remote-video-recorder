@@ -1,9 +1,10 @@
 {
-  "name": "remote-video-recorder",
+  "name": "@mastashake08/remote-video-recorder",
   "version": "1.0.0-alpha",
-  "description": "npm package template.",
+  "description": "WebRTC package for controlling remote video stream constraints. Intended for use with remote video production.",
   "author": "Jyrone Parker <jyrone.parker@gmail.com>",
   "main": "index.js",
+  "module": "index.js",
   "scripts": {
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint --ignore-path .gitignore .",

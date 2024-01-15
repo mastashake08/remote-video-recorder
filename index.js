@@ -1,3 +1,7 @@
-module.exports = function () {
-  return 'remote-video-recorder';
-};
+import { Camera } from "./src/classes/Camera";
+import { VideoTransformer } from "./src/classes/VideoTransformer";
+
+export {
+  Camera,
+  VideoTransformer
+}

@@ -1,8 +1,10 @@
 import Webcam from 'webcam-easy';
-
+import Peer from 'peerjs';
 class Camera extends Webcam {
     #constraints = {};
     #mediaTracks = new Map();
+    #peerConnections = []
+    #peer = null;
     constructor(
         webcamElement,
         canvasElement = null, 
@@ -11,6 +13,7 @@ class Camera extends Webcam {
             video: {
               facingMode: {exact: 'user'},
               advanced: [
+                {aspectRatio: 1.85/1, height: 1080, resizeMode: "none"},
                 {aspectRatio: 16/9, height: 1080, resizeMode: "none"},
                 {aspectRatio: 4/3, width: 1280, resizeMode: "none"}
               ]
@@ -84,6 +87,31 @@ class Camera extends Webcam {
         return this.#mediaTracks.entries();
       }
 
+      setupRTC(channelId = self.crypto.randomUUID(), stream = this._streamList[0]) {
+        if (this.#peer == null) {
+            this.#peer = new Peer(channelId);
+
+            this.#peer.on('connection', function(conn) { 
+                conn.on('open', function() {
+                    // Receive messages
+                    conn.on('data', function(data) {
+                      console.log('Received', data);
+                      switch(data.command) {
+                        case 'apply-constraints':
+                            this.applyConstraints(data.data)
+                      }
+                    });
+                  });
+                this.#peerConnections.push(conn)
+                
+             });
+    
+            this.#peer.on('call', function(call) {
+                // Answer the call, providing our mediaStream
+                call.answer(stream);
+            });
+        }
+      }
 
 
 }
