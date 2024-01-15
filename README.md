@@ -1,10 +1,10 @@
-# npm-package-template
+# remote-video-recorder
 
-[![NPM](https://nodei.co/npm/npm-package-template.png)](https://nodei.co/npm/npm-package-template/)
+[![NPM](https://nodei.co/npm/remote-video-recorder.png)](https://nodei.co/npm/remote-video-recorder/)
 
-[![NPM version](https://img.shields.io/npm/v/npm-package-template.svg)](https://www.npmjs.com/package/npm-package-template)
-[![Build Status](https://travis-ci.org/mastashake08/npm-package-template.svg?branch=master)](https://travis-ci.org/mastashake08/npm-package-template)
-[![Coverage Status](https://coveralls.io/repos/github/mastashake08/npm-package-template/badge.svg?branch=master)](https://coveralls.io/github/mastashake08/npm-package-template?branch=master)
+[![NPM version](https://img.shields.io/npm/v/remote-video-recorder.svg)](https://www.npmjs.com/package/remote-video-recorder)
+[![Build Status](https://travis-ci.org/mastashake08/remote-video-recorder.svg?branch=master)](https://travis-ci.org/mastashake08/remote-video-recorder)
+[![Coverage Status](https://coveralls.io/repos/github/mastashake08/remote-video-recorder/badge.svg?branch=master)](https://coveralls.io/github/mastashake08/remote-video-recorder?branch=master)
 
 npm package template.
 
@@ -13,8 +13,8 @@ npm package template.
 Clone repository with Git:
 
 ```sh
-git clone https://github.com/mastashake08/npm-package-template.git
-cd npm-package-template
+git clone https://github.com/mastashake08/remote-video-recorder.git
+cd remote-video-recorder
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ Rename package (use [npm-package-name-checker](https://mastashake08.org/npm-pack
 
 ```sh
 # replace $NAME with your package name
-git grep -l npm-package-template | xargs sed -i '' -e "s/npm-package-template/$NAME/g"
+git grep -l remote-video-recorder | xargs sed -i '' -e "s/remote-video-recorder/$NAME/g"
 ```
 
 Manually update the files:
@@ -115,4 +115,4 @@ npm pack --dry-run
 
 ## License
 
-[MIT](https://github.com/mastashake08/npm-package-template/blob/master/LICENSE)
+[MIT](https://github.com/mastashake08/remote-video-recorder/blob/master/LICENSE)

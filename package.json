@@ -1,5 +1,5 @@
 {
-  "name": "npm-package-template",
+  "name": "remote-video-recorder",
   "version": "1.0.0-alpha",
   "description": "npm package template.",
   "author": "Jyrone Parker <jyrone.parker@gmail.com>",
@@ -16,15 +16,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mastashake08/npm-package-template"
+    "url": "https://github.com/mastashake08/remote-video-recorder"
   },
   "bugs": {
-    "url": "https://github.com/mastashake08/npm-package-template/issues"
+    "url": "https://github.com/mastashake08/remote-video-recorder/issues"
   },
   "keywords": [
-    "npm-package-template"
+    "remote-video-recorder"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "peerjs": "1.5.2",
+    "webcam-easy": "1.1.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
