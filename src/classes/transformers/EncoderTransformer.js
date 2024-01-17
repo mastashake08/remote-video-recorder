@@ -7,9 +7,9 @@ class EncoderTransformer extends VideoEncoder {
         },
       }
     #encoderConfig = {
-        codec : 'vp8',
+        codec : 'vp9',
         tuning: {
-          bitrate: 1_000_000,
+          bitrate: 50_000_000,
           framerate: 24,
           width: 1024,
           height: 768
@@ -52,7 +52,7 @@ class EncoderTransformer extends VideoEncoder {
           return new Promise(resolve => {
             this.encodedCallback = resolve;
             // Skipped: check need to encode frame as key frame
-            this.#encoder.encode(frame, { … });
+            this.#encoder.encode(frame, { keyframe: false });
             frame.close();
           });
         }
