@@ -1,6 +1,6 @@
 {
   "name": "@mastashake08/remote-video-recorder",
-  "version": "1.0.0-alpha",
+  "version": "1.0.1-alpha",
   "description": "WebRTC package for controlling remote video stream constraints. Intended for use with remote video production.",
   "author": "Jyrone Parker <jyrone.parker@gmail.com>",
   "main": "index.js",
@@ -42,6 +42,6 @@
     "prettier": "^2.2.1",
     "standard-version": "^9.0.0"
   },
-  "files": [],
+  "files": ["src/"],
   "license": "MIT"
 }
